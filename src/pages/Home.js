@@ -1,6 +1,6 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
-import EventDetail from '../components/EventDetail'
+import Hero from '../components/Hero'
 import AboutEvent from '../components/AboutEvent'
 import MemberList from '../components/MemberList'
 import EventList from '../components/EventList'
@@ -8,8 +8,8 @@ import EventList from '../components/EventList'
 export default ({ members, events }) => (
     <Grid container spacing={16} style={{ marginTop: 80 }}>
         <Grid item xs={12}>
-            <EventDetail
-              title="Jakarta JS"
+            <Hero
+              title="Discover Indie Gigs"
               location="Jakarta, Indonesia"
               members={200}
               organizer="Adhy Wiranata"
