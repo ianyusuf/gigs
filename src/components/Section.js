@@ -4,25 +4,25 @@ import Typography from '@material-ui/core/Typography'
 import { css } from 'emotion'
 
 const styles = {
-  paperStyle: {
-    paddingLeft: 8,
-    paddingRight: 8,
-    paddingTop: 16,
-    paddingBottom: 16,
-    backgroundColor: 'rgba(0,0,0,0.1)',
-  }
+    background: {
+        paddingLeft: 160,
+        paddingRight: 160,
+        paddingTop: 60,
+        paddingBottom: 40,
+        // backgroundColor: 'rgba(0,0,0,1)',
+    }
 }
 
 const Section = ({
-  title,
-  children,
+    title,
+    children,
 }) => (
-  <section>
-    <Typography variant="title" gutterBottom>{title}</Typography>
-    <Paper className={css(styles.paperStyle)}>
-      {children}
-    </Paper>
-  </section>
+    <section className={css(styles.background)}>
+        <Typography className={css(styles.titleText)} component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+            {title}
+        </Typography>
+        {children}
+    </section>
 )
 
 export default Section

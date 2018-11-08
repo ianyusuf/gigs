@@ -1,71 +1,34 @@
-import React from 'react';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Typography from '@material-ui/core/Typography'
+import { fade } from '@material-ui/core/styles/colorManipulator'
+import amber from '@material-ui/core/colors/amber'
 
 const styles = theme => ({
-    layout: {
-        width: 'auto',
-        marginLeft: theme.spacing.unit * 3,
-        marginRight: theme.spacing.unit * 3,
-        [theme.breakpoints.up(900 + theme.spacing.unit * 3 * 2)]: {
-            width: 900,
-            marginLeft: 'auto',
-            marginRight: 'auto',
-        },
+    footerText: {
+        color: amber[500]
     },
     footer: {
-        marginTop: theme.spacing.unit * 4,
-        marginBottom: theme.spacing.unit * 4,
-        padding: `${theme.spacing.unit * 6}px 0`,
+        marginTop: theme.spacing.unit * 8,
+        padding: `${theme.spacing.unit * 2}px 0`,
+        backgroundColor: 'rgba(10,31,60,1)',
     },
-});
-
-const footers = [
-    {
-        title: 'Company',
-        description: ['Team', 'History', 'Contact us', 'Locations'],
-    },
-    {
-        title: 'Features',
-        description: ['Cool stuff', 'Random feature', 'Team feature', 'Developer stuff', 'Another one'],
-    },
-    {
-        title: 'Resources',
-        description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-    },
-    {
-        title: 'Legal',
-        description: ['Privacy policy', 'Terms of use'],
-    },
-];
+})
 
 function Footer(props) {
     const { classes } = props;
 
     return (
-        <React.Fragment>
-            <CssBaseline />
-            <footer className={classNames(classes.footer, classes.layout)}>
-                <Grid container spacing={32} justify="space-evenly">
-                {footers.map(footer => (
-                    <Grid item xs key={footer.title}>
-                    <Typography variant="h6" color="textPrimary" gutterBottom>
-                        {footer.title}
+        <Fragment>
+                <CssBaseline />
+                <footer className={classes.footer}>
+                    <Typography variant="h6" align="center" className={classes.footerText} gutterBottom>
+                        Discover Indie GIGS
                     </Typography>
-                    {footer.description.map(item => (
-                        <Typography key={item} variant="subtitle1" color="textSecondary">
-                        {item}
-                        </Typography>
-                    ))}
-                    </Grid>
-                ))}
-                </Grid>
-            </footer>
-        </React.Fragment>
+                </footer>
+        </Fragment>
     );
 }
 
